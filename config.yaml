@@ -1,2 +1,49 @@
 general:
   output_path: "/home/ttwicer/Desktop/github/image-retrieval"
+  query_size: 420
+  archive_size: 420
+  model: "resnet"
+  model_arch:
+    feature_size: 1024
+
+train:
+  enabled: true
+  epoch: 100
+  margin: 0.2
+  evalutation_period: 5
+  visualize_triplets: false
+
+  data:
+    filename: "/home/ttwicer/Desktop/github/image-retrieval/tfrecords/ucm/train.tfrecord"
+    size: 1260
+    batch_size: 10
+    shuffle_size: 1260
+    shuffle_seed: 42
+    num_parallel_calls: 100
+    prefetch_size: 5
+
+  checkpoints:
+    enabled: true
+    start: 0
+    frequency: 10
+
+  anchors:
+    selection: "random"
+    number: 10
+
+  triplets:
+    selection: "random"
+    num_elements: 10
+    initial_epochs: 0
+    iteration_frequency: 10
+
+  optimizer:
+    name: "adam"
+    args:
+      learning_rate: 0.001
+
+  learning_rate_decay:
+    enabled: true
+    initial_learning_rate: 0.001
+    decay_steps: 5
+    decay_rate: 0.95

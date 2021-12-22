@@ -1,0 +1,7 @@
+[INFO:2021-12-22 11:46:15] Perform step train
+[INFO:2021-12-22 11:46:15] Loading dataset from "/home/ttwicer/Desktop/github/image-retrieval/tfrecords/ucm/train.tfrecord".
+[INFO:2021-12-22 11:46:16] Creating new triplet model with the configuration:
+	model = resnet
+	feature_size = 1024
+[INFO:2021-12-22 11:46:17] Epoch 001
+[ERROR:2021-12-22 11:46:20] An error occurred: Attempt to convert a value (None) with an unsupported type (<class 'NoneType'>) to a Tensor..
